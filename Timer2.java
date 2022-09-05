@@ -39,6 +39,8 @@ public class Timer2 {
 				new sprawdzanieDrugie();
 				new oknoKoniec();
 				Timer1.timer2.cancel();
+				//Zegar.setVisible(false);
+				
 				}
 				
 			}};

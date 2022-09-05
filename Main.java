@@ -26,6 +26,8 @@ public static void main(String[] args) throws InterruptedException{
 	//new Zegar();
 	new oknoPoczatkowe();
 	//new Zegar();
+	//new odczytCzasu();
+	//new oknoKoniec();
 
 	
 	

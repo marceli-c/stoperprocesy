@@ -1,5 +1,6 @@
 package procesy;
 
+import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
@@ -8,12 +9,14 @@ public class sumowanieRoznicy {
 	static int roznicagodziny;
 	static int roznicaminuty;
 	static long roznicasekundy;
+	static LocalDateTime poczatek;
+	static LocalDateTime koniec;
 	
 	public sumowanieRoznicy() {
 		
+		sumowanieRoznicy.poczatek=sprawdzaeniePierwsze.getDataPoczatek();
+		sumowanieRoznicy.koniec=sprawdzanieDrugie.getDataKoniec();
 		
-		LocalDateTime poczatek=sprawdzaeniePierwsze.getDataPoczatek();
-		LocalDateTime koniec=sprawdzanieDrugie.getDataKoniec();
 		
 		Duration trwanie=Duration.between(poczatek, koniec);
 		
@@ -62,5 +65,21 @@ public class sumowanieRoznicy {
 	}
 	static double getSekundyFinal() {
 		return roznicasekundy;
+	}
+	static DayOfWeek getDzien() {
+		return koniec.getDayOfWeek();
+		
+	}
+	static int getMonth() {
+		return koniec.getMonthValue();
+	}
+	static int getYear() {
+		return koniec.getYear();
+	}
+	static int getGodzinaZakonczenia() {
+		return koniec.getHour();
+	}
+	static int getDzienRoku() {
+		return koniec.getDayOfYear();
 	}
 } 

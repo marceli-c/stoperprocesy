@@ -13,16 +13,17 @@ import javax.swing.JPanel;
  
 public class MyPanel extends JPanel{
 	Timer timer;
-	static int godziny=(int)(sumowanieRoznicy.getGodzinyFinal());
-	static int sekundy=(int)(sumowanieRoznicy.getSekundyFinal());
-	static int minuty=(int)(sumowanieRoznicy.getMinutyFinal());
-	static int second1=0;
-	static int second2=0;
-	static int minute1=0;
-	static int minute2=0;
+	static int godziny=0;//(int)(sumowanieRoznicy.getGodzinyFinal());
+	static int sekundy=0;//(int)(sumowanieRoznicy.getSekundyFinal());
+	static int minuty=0;//(int)(sumowanieRoznicy.getMinutyFinal());
+	static int second1=4;
+	static int second2=8;
+	static int minute1=3;
+	static int minute2=9;
 	static int hour1=0;
 	static int hour2=0;
 	public static int minus=20;
+	static Color kolorek=Color.white;
 	
 	MyPanel(){
 		
@@ -45,8 +46,9 @@ public class MyPanel extends JPanel{
         	RenderingHints.VALUE_ANTIALIAS_ON
         );
 		g2d.setStroke(new BasicStroke(5,BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+		//kolorek=kolor(Color.black);
 		
-		g2d.setColor(Color.white);
+		g2d.setColor(kolorek);
 		
 		
 		/*drawOne(g2d,100,100);
@@ -152,27 +154,27 @@ public class MyPanel extends JPanel{
 	}
 	public void drawSix(Graphics2D g2d, int x,int y) {
 		
-		liniapozioma(g2d,x,y,x+30-(minus/2));
-		liniapionowa(g2d,x+30-(minus/2),y,y+10-(minus/6));
+		liniapozioma(g2d,x,y,x+25-(minus/2));
+		liniapionowa(g2d,x+25-(minus/2),y,y+10-(minus/6));
 		liniapionowa(g2d,x,y,y+60-minus);
-		kwadrat(g2d,x,y+40-minus);
+		kwadrat(g2d,x,y+40-minus,15,20);
 		
 	}
 	public void drawSeven(Graphics2D g2d,int x,int y) {
-		//liniapionowa(g2d,x,y,y+30);
+		
 		liniapozioma(g2d,x,y);
-		//liniapionowa(g2d,x+50,y,y+30);
-		//liniapozioma(g2d,x+25,y+45,x+50,y+30);
-		//liniapionowa(g2d,x+25,y+45,y+120);
 		liniapozioma(g2d,x+5,y+60-minus,x+10,y);
+		
 	}
 	public void drawEight(Graphics2D g2d,int x,int y) {
-		kwadrat(g2d,x-5,y,30-minus,40-minus);
-		kwadrat(g2d,x-10,y+40-minus,40-minus,40-minus);
+		kwadrat(g2d,x,y,30-minus,40-minus);
+		kwadrat(g2d,x-5,y+40-minus,40-minus,40-minus);
+		
+		
 	}
 	public void drawNine(Graphics2D g2d,int x,int y) {
-		kwadrat(g2d,x,y,40-minus,40-minus);
-		liniapionowa(g2d,x+40-minus,y,y+60-minus);
+		kwadrat(g2d,x-5,y,35-minus,40-minus);
+		liniapionowa(g2d,x+30-minus,y,y+60-minus);
 	}
 	/*public void drawZero(Graphics2D g2d,int x,int y) {
 		liniapozioma(g2d,x+5,y,x+45);
@@ -407,7 +409,7 @@ public void drawSeconds(Graphics2D g2d) {
 		if(seconds==60) {
 			second1=6;
 		}
-		if(seconds>60) {
+		if(seconds<10) {
 			second1=0;
 		}
 		switch(seconds%10) {
@@ -446,6 +448,10 @@ public void drawSeconds(Graphics2D g2d) {
 			if(minutes==60) {
 				minute1=6;
 			}
+			if(minutes<10) {
+				minute1=0;
+			}
+			
 			switch(minutes%10) {
 			
 			case 0:minute2=0; break;
@@ -515,6 +521,10 @@ public void drawSeconds(Graphics2D g2d) {
 		public void rep() {
 			this.repaint();
 		}
+	public static void setKolor(Color kolor) {
+		kolorek=kolor;
+		
+	}
 	
 	
 }
