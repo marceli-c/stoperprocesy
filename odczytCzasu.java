@@ -160,23 +160,21 @@ public class odczytCzasu {
 	}
 	
 	public void liczDni() {
-		System.out.println(miesiacodczyt);
-		System.out.println("dzien teraz="+dzienrokuteraz);
-		System.out.println("dzien odczyt="+dzienrokuodczyt);
-		System.out.println("Godzina teraz= "+godzinateraz);
-		System.out.println("Godzina odczyt= "+godzinaodczyt);
+		//System.out.println(miesiacodczyt);
+		//System.out.println("dzien teraz="+dzienrokuteraz);
+		//System.out.println("dzien odczyt="+dzienrokuodczyt);
+		//System.out.println("Godzina teraz= "+godzinateraz);
+		//System.out.println("Godzina odczyt= "+godzinaodczyt);
 		if(
 			( dzienrokuteraz==dzienrokuodczyt || dzienrokuteraz==dzienrokuodczyt+1 && godzinateraz<godzinaodczyt)
 			 && (((dzienrokuodczyt-dzienrokuteraz)<=31 && miesiacteraz==miesiacodczyt+1) || miesiacteraz==miesiacodczyt) 
-			 && ((rokteraz==rokodczyt) || (rokodczyt+1==rokteraz&&dzienrokuteraz<dzienrokuodczyt)));
-				
-				
-				 {
+			 && ((rokteraz==rokodczyt) || (rokodczyt+1==rokteraz&&dzienrokuteraz<dzienrokuodczyt))){
+			
 					godzinydzien+=godziny;
 					minutydzien+=minuty;
 					sekundydzien+=sekundy;
 					
-			} //1 26 48
+			} 
 		while(sekundydzien>=60) {
 			sekundydzien-=60;
 			minutydzien+=1;
