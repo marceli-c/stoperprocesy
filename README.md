@@ -13,7 +13,7 @@
 <br> "Podejrzyj" option allows you to see all processes,
 <br> when u click it second time it shows you all processes opened in the time between 1st and 2nd click
 <br> When monitored process turns on the stopwatch pops up.
-<br> Click right m button on stopwatch opens the menu.
+<br> Click right m button on stopwatch to open the menu.
 
                                       "Kolor zielony"       = Green color
                                       "Kolor czarny"        = Black color 
