@@ -23,7 +23,7 @@
 <br> When monitored program turns off or you click "Zakończ" data is saved and then program is calculating your spent time
 
                                       "Podczas tej sesji"   = During this session
-                                      "W tym dniu"          = Today
+                                      "W tym dniu"          = Today      // Last 24h
                                       "W tym tygodniu"      = This week
                                       "W tym miesiącu"      = This month
                                       "W tym roku"          = This year
